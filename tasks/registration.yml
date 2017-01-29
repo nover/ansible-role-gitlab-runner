@@ -1,6 +1,6 @@
 ---
 - name: Register gitlab runner 
-  shell: gitlab-ci-multi-runner register --registration-token {{ gitlab_runner_registration_token|quote }} --name {{ gitlab_runner_name|quote }} --description {{ gitlab_runner_description|quote }} --url {{ gitlab_runner_url|quote }} --executor {{ gitlab_runner_executor|quote }}
+  shell: gitlab-ci-multi-runner register --registration-token {{ gitlab_runner_registration_token|quote }} --name {{ gitlab_runner_name|quote }} --url {{ gitlab_runner_url|quote }} --executor {{ gitlab_runner_executor|quote }}
   args:
     creates: /.runner-{{ gitlab_runner_name|hash('md5') }}
     chdir: /tmp/

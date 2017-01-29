@@ -15,7 +15,6 @@ Variable | Description | Example
 `gitlab_runner_registration_token`| [The gitlab instance CI registration token][1]  | `gjgfiijvcxv`
 `gitlab_runner_url`| The url of the gitlab instance to connect to | `https://gitlab.my.tld`
 `gitlab_runner_name`| Short name for the runner | `docker runner #1`
-`gitlab_runner_description`| Short description for the runner | `Builds stuff using docker`
 `gitlab_runner_executor`| [Executor to use for the runner][2], `docker`, `shell` etc | `docker`
 
 Please note that the `name` will be used to ensure that the runner is only registered ONCE per target server.
@@ -25,7 +24,7 @@ Please note that the `name` will be used to ensure that the runner is only regis
 ```yml
 - hosts: servers
   roles:
-    - { role: nover.gitlab-runner, gitlab_runner_url: 'https://gitlab.my.tld' ,gitlab_runner_name: 'My runner', gitlab_runner_description: 'Runs my builds', gitlab_runner_registration_token: 'asdfwerqe', gitlab_runner_executor: 'docker' }
+    - { role: nover.gitlab-runner, gitlab_runner_url: 'https://gitlab.my.tld' ,gitlab_runner_name: 'My runner', gitlab_runner_registration_token: 'asdfwerqe', gitlab_runner_executor: 'docker' }
 ```
 
 If you wish to register multiple runners, simply include the role multiple times and use different names and decriptions.
