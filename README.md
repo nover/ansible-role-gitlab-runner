@@ -17,7 +17,7 @@ Variable | Description | Example
 `gitlab_runner_name`| Short name for the runner | `docker runner #1`
 `gitlab_runner_executor`| [Executor to use for the runner][2], `docker`, `shell` etc | `docker`
 
-Please note that the `name` will be used to ensure that the runner is only registered ONCE per target server.
+Please note that the `gitlab_runner_name` will be used to ensure that the runner is only registered ONCE per target server.
 
 ## Example Playbook
 
