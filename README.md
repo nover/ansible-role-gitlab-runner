@@ -21,8 +21,6 @@ Please note that the `name` will be used to ensure that the runner is only regis
 
 ## Example Playbook
 
-`TODO`
-
 ```yml
 - hosts: servers
   roles:
