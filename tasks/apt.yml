@@ -1,0 +1,17 @@
+---
+# tasks file for ansible-role-gitlab-runner
+- name: Download gitlab-runner installer
+  get_url:
+    url: https://packages.gitlab.com/install/repositories/runner/gitlab-ci-multi-runner/script.deb.sh
+    dest: /tmp/script-runner.deb.sh
+    mode: 0770
+
+- name: Execute gitlab installer >> /.gitlab-runner-installer.log
+  shell: /tmp/script-runner.deb.sh
+  become: true
+  args:
+    creates: /.gitlab-runner-installer.log
+
+- name: Install gitlab runner
+  apt: name=gitlab-ci-multi-runner state=present
+  become: true
