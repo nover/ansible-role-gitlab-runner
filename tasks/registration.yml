@@ -4,3 +4,5 @@
   args:
     creates: /.runner-{{ gitlab_runner_name|hash('md5') }}
     chdir: /tmp/
+  tags:
+    - gitlab-runner.registration
