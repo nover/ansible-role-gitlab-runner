@@ -16,10 +16,10 @@ Variable | Description | Example
 `gitlab_runner_url`| The url of the gitlab instance to connect to | `https://gitlab.my.tld`
 `gitlab_runner_name`| Short name for the runner | `docker runner #1`
 `gitlab_runner_executor`| [Executor to use for the runner][2], `docker`, `shell` etc | `docker`
-
-Please note that the `gitlab_runner_name` will be used to ensure that the runner is only registered ONCE per target server.
+`gitlab_runner_id`| Your ID for this runner (token), must be unique | `id312`
 
 Also note that when registering docker builders, a default image of `node:6.9` is used, but this can be changed via the variable `gitlab_runner_docker_image`
+
 ## Example Playbook
 
 ```yml
