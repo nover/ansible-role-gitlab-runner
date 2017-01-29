@@ -19,6 +19,7 @@ Variable | Description | Example
 
 Please note that the `gitlab_runner_name` will be used to ensure that the runner is only registered ONCE per target server.
 
+Also note that when registering docker builders, a default image of `node:6.9` is used, but this can be changed via the variable `gitlab_runner_docker_image`
 ## Example Playbook
 
 ```yml
