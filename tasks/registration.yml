@@ -1,6 +1,6 @@
 ---
 - name: Register gitlab runner 
-  shell: gitlab-ci-multi-runner register --registration-token {{ gitlab_runner_registration_token|quote }} --name {{ gitlab_runner_name|quote }} --url {{ gitlab_runner_url|quote }} --executor {{ gitlab_runner_executor|quote }} --docker-image {{ gitlab_runner_docker_image|quote }} -r {{ gitlab_runner_id }} --non-interactive
+  shell: gitlab-ci-multi-runner register --registration-token {{ gitlab_runner_registration_token|quote }} --name {{ gitlab_runner_name|quote }} --url {{ gitlab_runner_url|quote }} --executor {{ gitlab_runner_executor|quote }} --docker-image {{ gitlab_runner_docker_image|quote }} --non-interactive
   become: true
   args:
     creates: .runner-{{ gitlab_runner_name|hash('md5') }}
